@@ -4,9 +4,13 @@ class College {
     private int marks;
 
     College(String name, int rollNo, int marks) {
-        this.name = name;
-        this.rollNo = rollNo;
-        this.marks = marks;
+        if(name == " ") return;
+       else  this.name = name;
+
+       if(rollNo<0) return;
+       else  this.rollNo = rollNo;
+       if(marks<0 || marks>100) return;
+       else this.marks = marks;
     }
 
     // void setName( String name){
