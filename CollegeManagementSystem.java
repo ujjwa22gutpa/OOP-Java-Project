@@ -16,9 +16,9 @@ class College {
     // void setName( String name){
     // this.name=name;
     // }
-    String getName() {
-        return name;
-    }
+    // String getName() {
+    //     return name;
+    // }
     // void setRollNo(int rollNo){
     // if(rollNo<0){
     // System.out.println("Invalid roll number");
@@ -26,9 +26,9 @@ class College {
     // }else this.rollNo=rollNo;
 
     // }
-    int getRollNo() {
-        return rollNo;
-    }
+    // int getRollNo() {
+    //     return rollNo;
+    // }
 
     // void setMarks( int marks){
     // if(marks<0 || marks >100){
@@ -36,12 +36,16 @@ class College {
     // return;
     // }else this.marks=marks;
     // }
-    int getMarks() {
-        return marks;
-    }
+    // int getMarks() {
+    //     return marks;
+    // }
     // int [] getEverything (){
     // return new int[] {name,};
     // }
+
+    void display(){
+        System.out.println(name+"  "+rollNo+" "+marks);
+    }
 }
 
 class CollegeManagementSystem {
@@ -56,8 +60,11 @@ class CollegeManagementSystem {
 
         College s1 = new College("ujjwal", 2207100, 99);
         College s2 = new College("Krishna", 14466456, 98);
-        System.out.println(s1.getMarks() + "  " + s1.getName() + "   " + s1.getRollNo());
-        System.out.println(s2.getMarks() + "  " + s2.getName() + "   " + s2.getRollNo());
+        // System.out.println(s1.getMarks() + "  " + s1.getName() + "   " + s1.getRollNo());
+        // System.out.println(s2.getMarks() + "  " + s2.getName() + "   " + s2.getRollNo());
+
+        s1.display();
+        s2.display();
 
     }
 }
