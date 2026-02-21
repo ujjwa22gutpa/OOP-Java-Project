@@ -1,47 +1,46 @@
+import java.util.Scanner;
+
 class College {
     private String name;
     private int rollNo;
     private int marks;
 
     College(String name, int rollNo, int marks) {
-        if(name == " ") return;
-       else  this.name = name;
+        if(name == null || name.trim().isEmpty()) System.out.println("do not enter the empty string");
+        else  this.name = name;
 
-       if(rollNo<0) return;
+       if(rollNo<0) System.out.println("please enter the correct rollNo");
        else  this.rollNo = rollNo;
-       if(marks<0 || marks>100) return;
+
+       if(marks<0 || marks>100) System.out.println("please enter the valid marks");
        else this.marks = marks;
     }
 
-    // void setName( String name){
-    // this.name=name;
-    // }
-    // String getName() {
-    //     return name;
-    // }
-    // void setRollNo(int rollNo){
-    // if(rollNo<0){
-    // System.out.println("Invalid roll number");
-    // return;
-    // }else this.rollNo=rollNo;
+  void setName(String name){
+    if(name == null || name.trim().isEmpty()) System.out.println("do not enter the empty string");
+    else  this.name = name;
+  }
+    void setRoll(int rollNo){
+   if(rollNo<0) System.out.println("please enter the correct rollNo");
+       else  this.rollNo = rollNo;
+  }
 
-    // }
-    // int getRollNo() {
-    //     return rollNo;
-    // }
+    void setMarks(int marks){
+   if(marks<0 || marks>100) System.out.println("please enter the valid marks");
+       else this.marks = marks;
+  }
 
-    // void setMarks( int marks){
-    // if(marks<0 || marks >100){
-    // System.out.println("plase enter the valid marks ");
-    // return;
-    // }else this.marks=marks;
-    // }
-    // int getMarks() {
-    //     return marks;
-    // }
-    // int [] getEverything (){
-    // return new int[] {name,};
-    // }
+   String getName() {
+        return name;
+    }
+
+    int getRollNo() {
+        return rollNo;
+    }
+
+    int getMarks() {
+        return marks;
+    }
 
     void display(){
         System.out.println(name+"  "+rollNo+" "+marks);
@@ -50,21 +49,71 @@ class College {
 
 class CollegeManagementSystem {
     public static void main(String[] args) {
-        // College s1=new College();
-        // s1.setName("ujjwal");
-        // System.out.println(s1.getName());
-        // s1.setRollNo(2207190);
-        // System.out.println(s1.getRollNo());
-        // s1.setMarks(99);
-        // System.out.println(s1.getMarks());
+        Scanner sc = new Scanner(System.in);
+        College [] students = new College[3];
+        // Inserting the data of students
 
-        College s1 = new College("ujjwal", 2207100, 99);
-        College s2 = new College("Krishna", 14466456, 98);
-        // System.out.println(s1.getMarks() + "  " + s1.getName() + "   " + s1.getRollNo());
-        // System.out.println(s2.getMarks() + "  " + s2.getName() + "   " + s2.getRollNo());
+        for( int i=0;i<students.length;i++){
+            System.out.println("enter the name, rollNo and marks");
+            String name = sc.nextLine();
+            int rollNo = sc.nextInt();
+            int marks = sc.nextInt();
+            sc.nextLine();
+            students[i]= new College(name,rollNo,marks);
+        }
 
-        s1.display();
-        s2.display();
-
+        // Printing the data of students
+    for(int i=0;i<students.length;i++){
+        System.out.println("Data of Student"+ i);
+           students[i].display();
     }
+  // Searching the data of students
+  System.out.println("enter the roll number to search");
+  Boolean findRollNo = false;
+  int SearchRollNo  = sc.nextInt();
+  for(int i=0;i<students.length;i++){
+    if(students[i].getRollNo() == SearchRollNo){
+        students[i].display();
+        findRollNo=true;
+        break;
+    }
+  } 
+  if(!findRollNo) System.out.println("rollNo did'nt find");
+
+
+  // Updating the values
+  System.out.println("enter the roll no you want to update");
+  Boolean UpdateRollNo = false;
+  int UpdateRoll = sc.nextInt();
+  for(int i=0;i<students.length;i++){
+    if(UpdateRoll == students[i].getRollNo()){
+        students[i].setName("updated");
+        students[i].display();
+        UpdateRollNo=true;
+        break;
+    }
+  }
+if(!UpdateRollNo) System.out.println("updated rollNo is not found");
+
+
+
+  // Deleting the values
+  System.out.println("Enter the student roll no you want to delete");
+  int deleteRollNo = sc.nextInt();
+Boolean deleteRoll=false;
+  for(int i=0;i<students.length;i++){
+    if(deleteRollNo == students[i].getRollNo()){
+        for(int j=i;j<students.length-1;j++){
+            students[j]=students[j+1];
+        }
+        students[students.length-1]=null;
+        deleteRoll=true;
+        break;
+    }
+  }
+   if(deleteRoll)System.out.println("Student has been deleted");
+   else System.out.println("Student has not been deleted");
+
+}
+
 }
