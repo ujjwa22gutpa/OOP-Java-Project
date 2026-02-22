@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: beige;
+        margin: 0;
+      }
+      form{
+        color: rgba(58, 4, 224, 0.959);
+        padding: 30px;
+        margin: 10px;
+      }
+      input{
+        background-color:beige;
+        padding:5px;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      button{
+        background-color: aquamarine;
+        border-radius: 10px;
+        width: 100px;
+        border: none;
+        padding: 10px;
+      }
+      .form{
+        background-color: rgb(60, 255, 0);
+        border-radius: 30px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <form action="">
+          <label>Name: *</label>
+          <input required  ="text" placeholder="Enter the name" />
+          <br /><br />
+          <label>Email:*</label>
+          <input type="email" placeholder="Enter the Email" />
+          <br /><br />
+          <label>Password:</label>
+          <input type="password" placeholder="Enter the password" />
+          <br /><br />
+          <label for="gender">Gender:</label>
+          <input id="gender" type="radio" name="Gender" value="male" />Male
+          <input id="gender" type="radio" name="Gender" value="female" />Female <br /><br />
+          <label>DOB:</label>
+          <input type="date" />
+          <br /><br />
+          <label>Phone No:</label>
+          <input type="tel" />
+          <br /><br />
+          <label for="select">Course:</label>
+          <select name="Skills" id="select">
+            <option  value="">AIML</option>
+            <option value="">CSDS</option>
+            <option value="">CS</option>
+            <option value="">ME</option>
+          </select>
+          <br /><br />
+          <label>Skills: </label>
+          <input type="checkbox" />Java <input type="checkbox" />C++
+          <input type="checkbox" />C <input type="checkbox" />Python
+          <br /><br />
+          <label>Upload Resume</label>
+          <input type="file" />
+          <br /><br />
+          <button>Submit Form</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

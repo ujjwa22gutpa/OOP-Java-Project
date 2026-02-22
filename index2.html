@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="secContainer">
+        <h2
+          style="
+            text-align: center;
+            border-radius: 10px;
+            color: red;
+            margin-bottom: 20px;
+          "
+        >
+          login Form
+        </h2>
+        <form action="">
+          <label for="name">Name *</label>
+          <input
+            name="Username"
+            type="text"
+            placeholder="Enter the name"
+            required
+            maxlength="20"
+          />
+          <br /><br />
+          <label for="">Email *</label>
+          <input
+            type="email"
+            placeholder="Enter the Email"
+            name="userEmail"
+            required
+            maxlength="20"
+          />
+          <br /><br />
+          <label for="">Password *</label>
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="Enter the password"
+            required
+            maxlength="15"
+          />
+        </form>
+        <button type="submit">Login</button>
+      </div>
+    </div>
+  </body>
+</html>
