@@ -60,7 +60,7 @@ class College {
     }
 }
 
-class CollegeManagementSystem {
+class CollegeManagementSystemEncapsulation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         College[] students = new College[3];
