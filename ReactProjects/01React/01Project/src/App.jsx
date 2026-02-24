@@ -5,31 +5,31 @@ import RegistrationForm from './Componets/RegistrationForm'
 import Counter from './Componets/Counter'
 import DashBoard from './Componets/DashBoard'
 import { useEffect } from 'react'
-
+import Whether from './WhetherApp/Whether'
 export default function App() {
-useEffect(()=>{
+// useEffect(()=>{
 
-async function fetchData(){
+// async function fetchData(){
 
-const data = await fetch("https://jsonplaceholder.typicode.com/users")
+// const data = await fetch("https://jsonplaceholder.typicode.com/users")
 
-const jsonData = await data.json()
+// const jsonData = await data.json()
 
-console.log(jsonData)
+// console.log(jsonData)
 
-}
+// }
 
-fetchData()
+// fetchData()
 
-},[])
+// },[])
 
-useEffect(()=>{
+// useEffect(()=>{
 
-fetch("https://jsonplaceholder.typicode.com/users")
-.then(res=>res.json())
-.then(data=>console.log(data))
+// fetch("https://jsonplaceholder.typicode.com/users")
+// .then(res=>res.json())
+// .then(data=>console.log(data))
 
-},[])
+// },[])
 
   return (
     <>
@@ -38,7 +38,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
   <RegistrationForm />
   <hr />
  <Counter /> */}
- <LoginFrom />
+ {/* <LoginFrom /> */}
+
+
+ <Whether />
   </>
   )
 }
